@@ -57,7 +57,18 @@ class ConMatrix:
             if predictions[i] == 0 and y_test[i] != predictions[i]:
                 FN = FN + 1
         r = TP/(TP+FN)
+        T = TP/(TP+FN)
+        F =  FP/(FP+TN)
         print("The recall is",r)
+        print("The true positive rate is",T)
+        print("The false positive rate is",F)
+        plt.scatter(F,T,s=10,c='r')
+        plt.title("ROC Curve")
+        plt.xlabel("FPR")
+        plt.ylabel("TPR")
+        plt.show()
+        AUC = T*F
+        print("The area under the curve is",AUC)
 df = pd.read_csv("Two_points_KNN.csv")
 new_data = df.rename(columns = {"9.434466063": "X", "-2.572000009":"Y", "0": "Class"})
 X = new_data.drop(labels = ["Class"],axis=1)
