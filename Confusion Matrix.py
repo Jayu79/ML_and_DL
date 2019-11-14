@@ -22,7 +22,7 @@ class ConMatrix:
                 TN = TN+1
             if predictions[i]==0 and y_test[i]!=predictions[i]:
                 FN = FN+1
-        print("The confusion matrix is")
+        print("The Confusion Matrix is")
         print(TP,"",FP)
         print(FN,"",TN)
 
