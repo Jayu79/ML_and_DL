@@ -59,7 +59,7 @@ class ConMatrix:
         r = TP/(TP+FN)
         T = TP/(TP+FN)
         F =  FP/(FP+TN)
-        print("The recall is",r)
+        print("The Recall is",r)
         print("The true positive rate is",T)
         print("The false positive rate is",F)
         plt.scatter(F,T,s=10,c='r')
